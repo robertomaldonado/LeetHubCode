@@ -23,8 +23,22 @@ multiply for my sign
 join the ejected numbers, we may have them in a list for ease.
 """
 
-    
 class Solution:
+    """
+    If converting to str is allowed:
+
+        sign = 1
+        if x < 0:
+          sign = -1
+          x = sign * x 
+          
+        str_digit = [digit for digit in str(x)][::-1]
+        
+        num = sign * int("".join(str_digit))
+        if  num > (2**31) -1 or num < -1 * (2**31) -1:
+          return 0
+        return num
+    """
     def reverse(self, x: int) -> int:
         if not x or x == 0:
             return 0
