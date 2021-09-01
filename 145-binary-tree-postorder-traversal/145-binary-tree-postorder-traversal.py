@@ -17,11 +17,17 @@ Post order.
  2  1           9
  ** **         **
 [2,1,5,9,7,3]
- 
+
+[: 3 |]
+[: 7,3 |]
+[: 9,7,3 |
+[: ,9,7,3 |]
+[: 5,9,7,3 |]
+[: 2,1,5,9,7,3 |]
 """
 class Solution:
     def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-      
+      """
       def traverse_rec(self, root, ans):
         if not root: return []
         if root.left:
@@ -33,5 +39,46 @@ class Solution:
       ans = []
       traverse_rec(self, root, ans)
       return ans
+      """
+      if not root: return []
+      
+      s1 = []
+      s2 = []
+      s1.append(root)
+      
+      while s1:
+        tmp = s1.pop()
+        s2.append(tmp.val)
+        
+        if tmp.left:
+          s1.append(tmp.left)
+        if tmp.right:
+          s1.append(tmp.right)
+        
+      return s2[::-1]
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
       
       
